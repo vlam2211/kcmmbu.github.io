@@ -1572,7 +1572,7 @@ function canvasCardPage(page, lang, local) {
 		'dom': 'input',
 		'appendId': [page + 'RightDiv'],
 		'id': 'shipNameText',
-		'className': ['shipName_input'],
+		'className': '',
 		'type': 'text',
 		'value': shipName.name,
 	});
@@ -1589,7 +1589,7 @@ function canvasCardPage(page, lang, local) {
 		'dom': 'input',
 		'appendId': [page + 'RightDiv'],
 		'id': 'shipKanaText',
-		'className': ['shipName_input'],
+		'className': '',
 		'type': 'text',
 		'value': shipName.yomi,
 	});
