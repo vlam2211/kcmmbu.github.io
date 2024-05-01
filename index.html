@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>kancolle魔改制作模版</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/x-icon" href="./img/logo/logo-black.png" />
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<style type="text/css">
+			@font-face {
+				font-family: "A-OTF-RyuminPro-Heavy";
+				src: url("./font/A-OTF-RyuminPro-Heavy.otf") format("opentype");
+			}
+			@font-face {
+				font-family: "Vani";
+				src: url("./font/Vani.ttf") format("truetype");
+			}
+		</style>
+		<script src="./js/webfont.js"></script>
+		<script src="./js/jszip.js"></script>
+		<script src="./js/FileSaver.js"></script>
+		<script src="./js/canvasAllPage.js"></script>
+	</head>
+	<body>
+		<!--
+																						  
+																						  
+									   .rUGM@B@OqLi                                       
+								   .u@B@B@B@B@B@B@B@BMr                                   
+					  :iv7vLPJ   r@B@B@B@@85uYFZ@@@B@B@BO.                                
+				   SB@B@B@B@B  rB@B@B@j            iE@B@@@M                               
+				 0@B@B@B@B@u  @B@B@O.   1B@B@@@,      rB@B@BL                             
+				B@B@BJ       .;:.,       .r@B@B@J       v@B@@0                            
+			   @@@@0                        :@@@@:        @B@B0                           
+			  ;@B@B         .@               i@@B@         @B@Bi                          
+			  SB@Bu          B.               @B@B         :@B@@                          
+			  2@B@u    :O@q. @,iF:            @@B@          @@B@,                         
+			  5B@B1      i7O:NMB@B            @B@B          YB@BL                         
+			  2@@@U        1@@@@B,            i         7@@@B@B@@@B@k                     
+			  1B@@1        B@B@B@v             .:rJu2u5,  @B@B@@@@@,                      
+			  U@B@U         q@B@BE         7B@B@B@B@B@B@O  r@@B@BU  L@BO:                 
+			  1B@B2     UOv kB@B@B@u     7@B@B@B@@@B@B@B@@.  M@B.  B@B@B@B:               
+			  U@@@2    YB@B@B@B@B@B5B   O@B@BG,               :      rB@@@Bu              
+			  1B@B5    q@B@B@B@B@B@XP  8@B@B              7            :@B@B7             
+			  U@B@2    LZ7, ;@@@B@P   .@B@@               BU            :@B@B             
+			  1B@B5          @@@@B@   FB@@1    ,r         @B             @@B@:            
+			  2@B@2         v@BMB@r@. k@@@L     X@BL      @@             MB@Bi            
+			  2B@B1         vB: @S Z  S@@@j       qB@XXB@O@:             B@B@:            
+			  2@B@2         Y@ :B  @  F@B@J          @B@B@B              BB@B:            
+			  1B@B1         B@ L@.@B. FB@Bu           7B@B@.             B@B@:            
+			  U@@@U         B; jBOB@  5@B@Y     .    vB@B@B7             @B@B:            
+			  5@@B1        .@U OB qB. FB@Bu     2:.  B@B@B@M             B@B@:            
+			  U@@@2         B: @B  O: 5@@@J     u@@@v u@B@B0         i.  BB@B:            
+			  FB@@u         @  BU  Bi SB@Bu     @@@B@B@@BMMB@.  . .:M@v  M@B@:            
+			  u@B@X         Bi @@j  . 5@@@Y  7Biu@B@B@B@B@B@@@B@B@Gri    @B@B:            
+			   B@B@         L.8M      kB@Bu   :.@B@B@B@B@@@B@B@BNr@.     B@@@:            
+			   2B@B@r                 S@B@Y     B@ Lu@@@@@B@B@@@r B@     @B@@:            
+				jB@@@B@8:    .1vrr7L  SB@@u     O   LB@B@OY7MB@M  U.     B@@@:            
+				 .G@B@@S  EM  u@B@B@, F@B@J       ;GB@B@B@r  r.@.        BB@B:            
+					rF  .B@@@.  MB@B. SB@Bu       i@@BGB@BBkPBZB@B       B@B@:            
+					   P@@B@B@N       F@@@J       r@B.v@Bk @B@B@B@P      @@@@:            
+					 u@@@@@B@B@B1     kB@Bj       2@B,@Bq  B@B@B@MS      B@B@:            
+					.SLi:@B@Br:v1:    F@B@Y       B@B@B:    B@@@@BJ      @B@B:            
+						 B@B@         XB@@j      :@MPB@:     B@@@B@M     B@@@:            
+						 jB@BM        S@B@J      .B   J@B:   @B@B@B@     @B@B:            
+						  @@@B:       q@@BJ             @Bq.  OB@BL,     M@B@:            
+						  i@B@B.      X@B@J              rB@:    ,       @B@B:            
+						   U@B@Br     i@@@@               @q             @@@@             
+							v@B@BB     @B@B@              r             B@B@S             
+							 .@B@B@Mi    ,7X5       ....i:            2@@B@O              
+							   vB@B@B@BL       ,7NB@B@B@@:  X0XqPPqMB@B@B@Y               
+								 :MB@B@B@B@B@@@B@B@B@BN   GB@B@@@B@B@B@B1                 
+									:5B@B@B@B@B@@@8L.   u@B@B@B@B@BMS7                    
+										  ..,.                                            
+																						  
+		-->
+		<div id='course' class='course-main' >
+			<div id='courseDiv' class='course-div' >
+				<img src='./img/logo/logo-color.png' style='width:300px;max-height:300px;margin-top:30px;'>
+				<h1><a href="#"  style='color:red;' onclick='closeA()'>点击这里进入 - 魔改文件制作页面</a></h1>
+				<h2><a href="./resourceBat.html">点击这里进入 - 图片文件批处理</a></h2>
+				<h3><a href="./voiceBat.html">点击这里进入 - 语音文件批处理</a></h3>
+				<h1>教程</h1>
+				<h4>本教程将教会你如何使用这个模版</h4>
+				<h2>一、使用前说明</h2>
+				<ul class='text-ul'>
+					<li>1、本模版为
+						<a href="https://www.dmm.com/" target="_blank">DMM</a>网页游戏
+						<a href="http://rcv.ixd.dmm.com/api/surl?urid=thvy3HHW&tuid=868981a2ca32a4ead7775620984be787deb94d7b4f10aea7b311797a2a90723d" target="_blank">
+							舰队收藏
+						</a>提供缓存替换用图片的编辑模版，请勿用作其他用途
+					</li>
+					<li>2、推荐使用
+						<a href="https://daofeng.wifi169.com" target="_blank">岛风GO</a>或者
+						<a href="http://www.acggate.net/" target="_blank">ACG POWER</a>
+						加载后缀为.hack格式的缓存文件
+					</li>
+					<li>3、本模版推荐使用
+						<a href='https://www.google.cn/intl/zh-CN/chrome/' target="_blank">谷歌浏览器</a>
+					</li>
+					<li>4、请使用大于1600*900的浏览器窗口页面操作</li>
+					<li>5、使用中的任何问题请加QQ群：<a href="https://jq.qq.com/?_wv=1027&k=5dMQLGk" target="_blank">734516000</a>&nbsp;(申请填写地址栏IP)</li>
+				</ul>
+				<h2>二、缓存文件</h2>
+				<ul class='text-ul'>
+					<li>本模版为游戏角色立绘中大部分图片进行在线制作编辑提供模版制作和打包工具,其中包括：</li>
+					<li>full.png &emsp; 全身正常立绘</li>
+					<li>full_dmg.png &emsp; 全身中破立绘</li>
+					<li>full_x2.png &emsp; 两倍全身正常立绘</li>
+					<li>card.png &emsp; 卡牌正常半身</li>
+					<li>card_dmg.png &emsp; 卡牌中破半身</li>
+					<li>banner.png &emsp; 横幅正常头像</li>
+					<li>banner_dmg.png &emsp; 横幅中破头像</li>
+					<li>banner_g_dmg.png &emsp; 横幅击沉头像</li>
+					<li>banner2.png &emsp; 联合二队横幅正常头像</li>
+					<li>banner2_dmg.png &emsp; 联合二队横幅中破头像</li>
+					<li>banner2_g_dmg.png &emsp; 联合二队横幅击沉头像</li>
+					<li>supply_character.png &emsp; 补给正常头像</li>
+					<li>supply_character_dmg.png &emsp; 补给中破头像</li>
+					<li>character_full.png &emsp; 近代化改修 全身缩小正常立绘</li>
+					<li>character_full_dmg.png &emsp; 近代化改修 全身缩小中破立绘</li>
+					<li>character_up.png &emsp; 舰船图鉴 半身正常立绘</li>
+					<li>character_up_dmg.png &emsp; 舰船图鉴 半身中破立绘</li>
+					<li>remodel.png &emsp; 大规模改造 大横幅正常头像</li>
+					<li>remodel_dmg.png &emsp; 大规模改造 大横幅中破头像</li>
+					<li>special.png &emsp; 特殊攻击正常立绘</li>
+					<li>album_status.png &emsp; 舰船图鉴 角色名称舰种型号图片</li>
+					<li>config.ini &emsp; 调整立绘坐标的ini文件</li>
+					<br>
+					<li>自定义语音文件格式如下：</li>
+					<li>
+					1.mp3 &emsp; 获得/登陆游戏 <br>
+					2.mp3 &emsp; 母港/详细阅览1 <br>
+					3.mp3 &emsp; 母港/详细阅览2 <br>
+					4.mp3 &emsp; 母港/详细阅览3 <br>
+					5.mp3 &emsp; 建造完成 <br>
+					6.mp3 &emsp; 修复完成 <br>
+					7.mp3 &emsp; 回港 <br>
+					8.mp3 &emsp; 战绩表示 <br>
+					9.mp3 &emsp; 改装/改修/改造1 <br>
+					10.mp3 &emsp; 改装/改修/改造2 <br>
+					11.mp3 &emsp; 入渠（小破或以下） <br>
+					12.mp3 &emsp; 入渠（中破或以上） <br>
+					13.mp3 &emsp; 编成 <br>
+					14.mp3 &emsp; 出击 <br>
+					15.mp3 &emsp; 战斗开始 <br>
+					16.mp3 &emsp; 攻击1 <br>
+					17.mp3 &emsp; 攻击2 <br>
+					18.mp3 &emsp; 夜战 <br>
+					19.mp3 &emsp; 小破1 <br>
+					20.mp3 &emsp; 小破2 <br>
+					21.mp3 &emsp; 中破 <br>
+					22.mp3 &emsp; 击沉 <br>
+					23.mp3 &emsp; 胜利MVP <br>
+					24.mp3 &emsp; 结婚事件 <br>
+					25.mp3 &emsp; 图鉴介绍 <br>
+					26.mp3 &emsp; 远征选择时 <br>
+					27.mp3 &emsp; 补给 <br>
+					28.mp3 &emsp; 回港（结婚后） <br>
+					29.mp3 &emsp; 放置时 <br>
+					30.mp3 &emsp; 00:00 <br>
+					31.mp3 &emsp; 01:00 <br>
+					32.mp3 &emsp; 02:00 <br>
+					33.mp3 &emsp; 03:00 <br>
+					34.mp3 &emsp; 04:00 <br>
+					35.mp3 &emsp; 05:00 <br>
+					36.mp3 &emsp; 06:00 <br>
+					37.mp3 &emsp; 07:00 <br>
+					38.mp3 &emsp; 08:00 <br>
+					39.mp3 &emsp; 09:00 <br>
+					40.mp3 &emsp; 10:00 <br>
+					41.mp3 &emsp; 11:00 <br>
+					42.mp3 &emsp; 12:00 <br>
+					43.mp3 &emsp; 13:00 <br>
+					44.mp3 &emsp; 14:00 <br>
+					45.mp3 &emsp; 15:00 <br>
+					46.mp3 &emsp; 16:00 <br>
+					47.mp3 &emsp; 17:00 <br>
+					48.mp3 &emsp; 18:00 <br>
+					49.mp3 &emsp; 19:00 <br>
+					50.mp3 &emsp; 20:00 <br>
+					51.mp3 &emsp; 21:00 <br>
+					52.mp3 &emsp; 22:00 <br>
+					53.mp3 &emsp; 23:00 <br>
+					54+ &emsp; 其他 <br>
+					900+ &emsp; 特殊攻击语音 <br>
+					</li>
+					<br>
+					<li>.ini坐标文件格式如下：</li>
+					<li>
+					[info] <br>
+					ship_name= &emsp; 舰船名称 <br>
+					getmes= &emsp; 舰船掉落介绍内容 <br>
+					sinfo= &emsp; 舰船图鉴自我介绍内容 <br>
+					[graph] <br>
+					boko_n_left=0 &emsp; 母港 通常 距左 <br>
+					boko_n_top=0 &emsp; 母港 通常 距上 <br>
+					boko_d_left=0 &emsp; 母港 中破 距左 <br>
+					boko_d_top=0 &emsp; 母港 中破 距上 <br>
+					kaisyu_n_left=0 &emsp; 近代化改修 通常 距左 <br>
+					kaisyu_n_top=0 &emsp; 近代化改修 通常 距上<br>
+					kaisyu_d_left=0  &emsp; 近代化改修 中破 距左 <br>
+					kaisyu_d_top=0 &emsp; 近代化改修 中破 距上<br>
+					kaizo_n_left=0 &emsp; 改造中 通常 距左 <br>
+					kaizo_n_top=0 &emsp; 改造中 通常 距上<br>
+					kaizo_d_left=0 &emsp; 改造中 中破 距左 <br>
+					kaizo_d_top=0 &emsp; 改造中 中破 距上<br>
+					map_n_left=0 &emsp; 出击中地图 通常 距左 <br>
+					map_n_top=0 &emsp; 出击中地图 通常 距上<br>
+					map_d_left=0 &emsp; 出击中地图 中破 距左 <br>
+					map_d_top=0 &emsp; 出击中地图 中破 距上<br>
+					ensyuf_n_left=0 &emsp; 演习我方 通常 距左 <br>
+					ensyuf_n_top=0 &emsp; 演习我方 通常 距上<br>
+					ensyuf_d_left=0 &emsp; 演习我方 中破 距左 <br>
+					ensyuf_d_top=0 &emsp; 演习我方 中破 距上<br>
+					ensyue_n_left=0 &emsp; 演习敌方 通常 距左 <br>
+					ensyue_n_top=0 &emsp; 演习敌方 通常 距上<br>
+					ensyue_d_left=0 &emsp; 演习敌方 中破 距左 <br>
+					ensyue_d_top=0 &emsp; 演习敌方 中破 距上<br>
+					battle_n_left=0 &emsp; 战斗中 通常 距左 <br>
+					battle_n_top=0 &emsp; 战斗中 通常 距上<br>
+					battle_d_left=0 &emsp; 战斗中 中破 距左 <br>
+					battle_d_top=0 &emsp; 战斗中 中破 距上<br>
+					weda_left=0 &emsp; 结婚戒指 位置a 距左 <br>
+					weda_top=0 &emsp; 结婚戒指 位置a 距上<br>
+					wedb_left=0 &emsp; 结婚戒指 位置b 距左 <br>
+					wedb_top=0 &emsp; 结婚戒指 位置b 距上<br>
+					pa_left=0 &emsp; 特殊攻击 距左（岛风GO无效）<br>
+					pa_top=0 &emsp; 特殊攻击 距上（岛风GO无效）<br>
+					</li>
+					<br>
+					<li>.json坐标文件格式如下：</li>
+					<li>
+					{ <br>
+					  &emsp;"api_mst_ship":{ <br>
+					    &emsp;&emsp;"api_name":false, &emsp; 舰船名称 <br>
+					    &emsp;&emsp;"api_getmes":false, &emsp; 舰船掉落介绍内容 <br>
+					    &emsp;&emsp;"api_sinfo":false &emsp; 舰船图鉴自我介绍内容 <br>
+					   &emsp;}, <br>
+					  "api_mst_shipgraph":{ <br>
+					    &emsp;&emsp;"api_boko_n":[0,0], &emsp; 母港 通常 [距左,距上]<br>
+					    &emsp;&emsp;"api_boko_d":[0,0], &emsp; 母港 中破 [距左,距上]<br>
+					    &emsp;&emsp;"api_kaisyu_n":[0,0], &emsp; 近代化改修 通常 [距左,距上]<br>
+					    &emsp;&emsp;"api_kaisyu_d":[0,0], &emsp; 代化改修 中破 [距左,距上]<br>
+					    &emsp;&emsp;"api_kaizo_n":[0,0], &emsp; 改造中 通常 [距左,距上]<br>
+					    &emsp;&emsp;"api_kaizo_d":[0,0], &emsp; 改造中 中破 [距左,距上]<br>
+					    &emsp;&emsp;"api_map_n":[0,0], &emsp; 出击中地图 通常 [距左,距上]<br>
+					    &emsp;&emsp;"api_map_d":[0,0], &emsp; 出击中地图 中破 [距左,距上]<br>
+					    &emsp;&emsp;"api_ensyuf_n":[0,0], &emsp; 演习我方 通常 [距左,距上]<br>
+					    &emsp;&emsp;"api_ensyuf_d":[0,0], &emsp; 演习我方 中破 [距左,距上]<br>
+					    &emsp;&emsp;"api_ensyue_n":[0,0], &emsp; 演习敌方 通常 [距左,距上]<br>
+					    &emsp;&emsp;"api_ensyue_d":[0,0], &emsp; 演习敌方 中破 [距左,距上]<br>
+					    &emsp;&emsp;"api_battle_n":[0,0], &emsp; 战斗中 通常 [距左,距上]<br>
+					    &emsp;&emsp;"api_battle_d":[0,0], &emsp; 战斗中 中破 [距左,距上]<br>
+					    &emsp;&emsp;"api_weda":[0,0], &emsp; 结婚戒指 位置a [距左,距上]<br>
+					    &emsp;&emsp;"api_wedb":[0,0], &emsp; 结婚戒指 位置b [距左,距上]<br>
+					    &emsp;&emsp;"api_pa":[0,0], &emsp; 特殊攻击 [距左,距上]（acgp未知是否有效）<br>
+					   &emsp;} <br>
+					} <br>
+					</li>
+				</ul>
+				
+				<h2>三、制作流程</h2>
+				<ul class='text-ul'>
+					<li>♦ 点击 魔改文件制作页面 进入魔改文件制作，此页面一共可以制作除语音文件外所有上面提及的文件</li>
+					<li>♦ 制作流程分为：选择舰船 → 选择改造等级 → 上传立绘 → 根据场景进行制作 → 导出zip压缩包</li>
+					<li>♦ 可以导出两种类型的压缩包 cache.zip 和 bat.zip 具体内容介绍见 七、下载部分</li>
+					<li>♦ 点击 图片文件批处理 可以将bat.zip中解压出的文件夹 进行上传 打包成缓存格式的文件夹</li>
+					<li>♦ 点击 语音文件批处理 可以将自定义语音文件的文件夹 进行上传 打包成缓存格式的文件夹</li>
+				</ul>
+				<h2>四、上传部分</h2>
+				<ul class='text-ul'>
+					<li>♦ 点击制作后用户首先需要选择舰船，可以使用下拉框选择，也可以使用搜索框搜索</li>
+					<li>♦ 选择舰船后会出现舰船改造等级的选择框，必须选中一项，其余可以根据制作需求勾选</li>
+					<li>♦ 用户至少需要上传一张全身立绘来进行后续流程，其余上传部分根据需求可选</li>
+					<li>♦ 可上传部分为：</li>
+					<li> 
+					&emsp; 全身正常立绘（必选）<br>
+					&emsp; 全身中破立绘（可选）<br>
+					&emsp; 两倍全身正常（可选）<br>
+					&emsp; 两倍全身中破（可选）<br>
+					&emsp; 特殊攻击立绘（可选）<br>
+					</li>
+					<li>♦ 如果需修改立绘，进入制作界面后需要点击最上部分的“全身”场景按钮重新上传立绘</li>
+				</ul>
+				<h2>五、操作部分</h2>
+				<ul class='text-ul'>
+					<li style='color:red;'>★ 每个制作场景图片完成后必须点击保存（重要！）！未保存将视为未制作！</li>
+					<li>♦ 最上部分单选框为：素材制作场景切换</li>
+					<li>♦ 最下部分单选框为：角色改造等级切换</li>
+					<li>♦ 最下部分点击查看可以确认当前制作进度</li>
+					<li>♦ 根据页面左边和右边进行设置，鼠标左键可以按住人物角色进行拖动</li>
+					<li>♦ 鼠标滚轮上下控制大小，最大100%，最小0%，改变间隔为1像素</li>
+					<li>♦ 鼠标滚轮左右控制旋转角度，最大180°，最小-180°，改变间隔为1像素</li>
+					<li>♦ 数值框可以输入小数精确改变数值（坐标文件输入框必须使用整数）</li>
+					<li>♦ 选中的数值框可以使用鼠标滚轮改变数值，改变间隔为1像素</li>
+				</ul>
+				<h2>六、文字部分</h2>
+				<ul class='text-ul'>
+					<li>♦ 舰名必须为日文汉字</li>
+					<li>♦ 假名必须为日文平甲或片甲</li>
+					<li>♦ 汉字特殊符号 ：&emsp;/ 换行&emsp;○ 特殊形状&emsp;- 特殊符号</li>
+				</ul>
+				<h2>七、下载部分</h2>
+				<ul class='text-ul'>
+					<li>♦ 下载为cache.zip的文件可直接作为缓存文件使用</li>
+					<li>♦ cache.zip文件，解压后可直接替换游戏缓存</li>
+					<li>♦ 下载为bat.zip的文件可作为批处理文件使用</li>
+					<li>♦ bat.zip文件，将所有文件放入一个文件夹内方便管理</li>
+					<li>♦ bat文件夹格式为:ship/舰船ID/png文件</li>
+					<li>例：</li>
+					<li>
+						&emsp;ship（舰船图片 主文件夹）<br>
+						&emsp;&emsp;0000（舰船角色ID 文件夹）<br>
+						&emsp;&emsp;&emsp;full_.png（舰船全身正常 立绘文件）<br>
+						&emsp;&emsp;&emsp;full_dmg.png（舰船全身中破 立绘文件）<br>
+						&emsp;&emsp;&emsp;config.ini（舰船立绘坐标文件）<br>
+						<br>
+					</li>
+					<li>♦ 语音文件夹格式为 sound/舰船ID/mp3文件</li>
+					<li>例：</li>
+					<li>
+						&emsp;sound（舰船图片 主文件夹）<br>
+						&emsp;&emsp;0000（舰船角色ID 文件夹）<br>
+						&emsp;&emsp;&emsp;1.mp3（获得/登陆游戏 语音文件）<br>
+						&emsp;&emsp;&emsp;2.mp3（母港/详细阅览 语音文件）<br>
+						&emsp;&emsp;&emsp;3.mp3（母港/详细阅览2 语音文件）<br>
+						<br>
+					</li>
+					<li>♦ 如需要作为缓存文件使用，上传至批处理页面导出即可</li>
+				</ul>
+				<h2>八、关于本站</h2>
+				<ul class='text-ul'>
+					<li>♦ 未制作页面：舰船图鉴 角色名称文本设置 暂未制作</li>
+					<li>♦ 本站后期计划升级成为玩家制作的魔改进行收集和管理的网站</li>
+					<li>♦ 如果您是：翻译、网页界面设计、WEB前后端开发，并也希望加入本站建设，请加群联系我</li>
+				</ul>
+				<h2>本站需要您的赞助</h2>
+					<h4 style='margin-bottom:0px;'>★ 请帮助我们维持本站（请加群留下您的联系方式） ★</h4>
+					<h4 style='margin-top:5px;'>★ 未来我们将为您提供出更好的网站使用体验 ★</h4>
+				<img src='./img/sponsor/sponsor-alipay+weixin.jpg' style='max-width:100%;max-height:100%;margin-top:30px;'>
+			</div>
+		</div>
+		<script>
+			function $(id){
+				return document.getElementById(id);
+			}
+			function closeA(){
+				$('course').remove();
+			}
+			function size(){
+				var innerWidth = window.innerWidth;
+				var innerHeight = window.innerHeight;
+				if($('course')){
+					$('course').style.width=innerWidth+'px';
+					$('course').style.height=innerHeight+'px';
+					$('courseDiv').style.height=innerHeight+'px';
+				}
+			}
+			window.onresize = function(){
+				size();	
+				if($('loadingDiv')){
+					$('loadingDiv').style.width=window.innerWidth+'px';
+					$('loadingDiv').style.height=window.innerHeight+'px';
+				}
+			};
+			window.onload = function(){
+				size();
+			};
+		</script>
+		<script src="./js/consoleLogo.js"></script>
+	</body>
+</html>
